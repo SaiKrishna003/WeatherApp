@@ -36,7 +36,7 @@ const Home = () => {
     // if (city === "") city = "London";
     axios
       .get(
-        "http://api.weatherapi.com/v1/forecast.json?key=" +
+        "https://api.weatherapi.com/v1/forecast.json?key=" +
           apiKey +
           "&q=" +
           city +
