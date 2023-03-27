@@ -33,7 +33,7 @@ const Home = () => {
   const [showHourFC, setShowHourFC] = useState([]);
 
   useEffect(() => {
-    if (city === "") city = "London";
+    // if (city === "") city = "London";
     axios
       .get(
         "http://api.weatherapi.com/v1/forecast.json?key=" +
