@@ -8,7 +8,7 @@ import Astronomy from "./Astronomy/Astronomy";
 import WeatherInfo from "./WeatherInfo";
 import HourlyFC from "./HourlyFC";
 
-const apiKey = "2b4bfe5f065946ee80e61859232403";
+const apiKey = process.env.REACT_APP_WEATHAER_API_KEY;
 
 const Home = () => {
   let city = useContext(contextStore);
@@ -33,7 +33,6 @@ const Home = () => {
   const [showHourFC, setShowHourFC] = useState([]);
 
   useEffect(() => {
-    // if (city === "") city = "London";
     axios
       .get(
         "https://api.weatherapi.com/v1/forecast.json?key=" +

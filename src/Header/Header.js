@@ -8,7 +8,8 @@ const Header = (props) => {
   };
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    props.setCity(city);
+    if(city.trim() !== '') 
+      props.setCity(city);
   };
   return (
     <div className="d-flex align-items-center gap-3 mb-3 border-bottom border-success py-3">
@@ -23,6 +24,7 @@ const Header = (props) => {
           placeholder="Enter City"
           onChange={handleOnChange}
           className="form-control border border-success"
+          required
         />
         <button type="submit" className="btn btn-success">
           <Search size={20} title="Click Search" />
