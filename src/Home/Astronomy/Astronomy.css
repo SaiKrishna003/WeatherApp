@@ -1,0 +1,12 @@
+.astronomy p{
+    margin: 0;
+}
+@media screen and (max-width:600px){
+    .astronomy {
+        font-size: small;
+    }
+    .astronomy img{
+        width: 20px;
+    }
+}
+
