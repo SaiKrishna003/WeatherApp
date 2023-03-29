@@ -10,20 +10,20 @@ const Astronomy = (props) => {
 
   return (
     <div className="astronomy bg-info bg-opacity-25 rounded-3 my-3 fw-bold">
-      <div className="d-flex justify-content-between">
+      <div className="d-flex justify-content-around">
         <div className="d-flex align-items-center gap-3 p-2 mx-2">
           <div>
             <img src={SunRiseIcon} alt="" />
           </div>
           <div>
             <p>Sun Rise</p>
-            <p>{astronomy.sunrise}</p>
+            <p className="text-warning">{astronomy.sunrise}</p>
           </div>
         </div>
         <div className="d-flex align-items-center gap-3 p-2 mx-2">
           <div>
             <p>Sun Set</p>
-            <p>{astronomy.sunset}</p>
+            <p className="text-warning">{astronomy.sunset}</p>
           </div>
           <div>
             <img src={SunSetIcon} alt="" />
@@ -31,20 +31,20 @@ const Astronomy = (props) => {
         </div>
       </div>
       <hr className="m-0" />
-      <div className="d-flex justify-content-between">
+      <div className="d-flex justify-content-around">
         <div className="d-flex align-items-center gap-3 p-2 mx-2">
           <div>
             <img src={MoonRiseIcon} alt="" />
           </div>
           <div>
             <p>Moon Rise</p>
-            <p>{astronomy.moonrise}</p>
+            <p className="text-warning">{astronomy.moonrise}</p>
           </div>
         </div>
         <div className="d-flex align-items-center gap-3 p-2 mx-2">
           <div>
             <p>Moon Set</p>
-            <p>{astronomy.moonset}</p>
+            <p className="text-warning">{astronomy.moonset}</p>
           </div>
           <div>
             <img src={MoonSetIcon} alt="" />

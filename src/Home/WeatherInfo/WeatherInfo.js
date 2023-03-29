@@ -1,10 +1,11 @@
 import React from "react";
-import HumidityIcon from "../assets/icons/icons8-humidity-32.png";
-import WindIcon from "../assets/icons/icons8-wind-16.png";
-import PrecipitationIcon from "../assets/icons/icons8-precipitation-16.png";
-import PressureIcon from "../assets/icons/icons8-pressure-gauge-16.png";
-import UVIcon from "../assets/icons/icons8-uv-16.png";
-import FeelsLikeIcon from "../assets/icons/icons8-feels-guy-16.png";
+import "./WeatherInfo.css";
+import HumidityIcon from "../../assets/icons/icons8-humidity-32.png";
+import WindIcon from "../../assets/icons/icons8-wind-16.png";
+import PrecipitationIcon from "../../assets/icons/icons8-precipitation-16.png";
+import PressureIcon from "../../assets/icons/icons8-pressure-gauge-16.png";
+import UVIcon from "../../assets/icons/icons8-uv-16.png";
+import FeelsLikeIcon from "../../assets/icons/icons8-feels-guy-16.png";
 
 const WeatherInfo = (props) => {
   const data = props.data;
@@ -24,22 +25,22 @@ const WeatherInfo = (props) => {
                 <h3>{data.temp_c} &#8451;</h3>
               )}
             </div>
-            <div className="d-flex justify-content-around border border-1 p-2 m-2 rounded-5 bg-warning bg-opacity-25">
+            <div className="fctemp d-flex justify-content-around border border-1 p-2 m-2 rounded-5 bg-warning bg-opacity-25 fw-bold">
               <div className="p-1">
-                Min Temp : {forecast ? data.mintemp_c : todayFC.mintemp_c}{" "}
-                &#8451;
+                <p> Min Temp</p>
+                <p>{forecast ? data.mintemp_c : todayFC.mintemp_c} &#8451;</p>
               </div>
               <div
                 style={{ borderLeft: "1px solid white", height: "auto" }}
               ></div>
               <div className="p-1">
-                Max Temp : {forecast ? data.maxtemp_c : todayFC.maxtemp_c}{" "}
-                &#8451;
+                <p>Max Temp</p>
+                <p>{forecast ? data.maxtemp_c : todayFC.maxtemp_c} &#8451;</p>
               </div>
             </div>
           </div>
 
-          <div className="pt-4 text-info">
+          <div className="pt-4 text-info fw-bold">
             <p>
               <img src={HumidityIcon} alt="" width="20px" className="mx-2" />
               {forecast ? (

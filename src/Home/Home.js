@@ -5,8 +5,9 @@ import { GeoAltFill, Clock } from "react-bootstrap-icons";
 
 import "./Home.css";
 import Astronomy from "./Astronomy/Astronomy";
-import WeatherInfo from "./WeatherInfo";
-import HourlyFC from "./HourlyFC";
+import WeatherInfo from "./WeatherInfo/WeatherInfo";
+import HourlyFC from "./HourlyFC/HourlyFC";
+import Loader from "./Loader/Loader";
 
 const apiKey = process.env.REACT_APP_WEATHAER_API_KEY;
 
@@ -32,7 +33,9 @@ const Home = () => {
   const [showAstro, setShowAstro] = useState({});
   const [showHourFC, setShowHourFC] = useState([]);
 
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
+    setIsLoading(true);
     axios
       .get(
         "https://api.weatherapi.com/v1/forecast.json?key=" +
@@ -64,9 +67,11 @@ const Home = () => {
         setShowHourFC(response.data.forecast.forecastday[1].hour);
 
         setErr(null);
+        setIsLoading(false);
       })
       .catch((error) => {
         error.response && setErr(error.response.data.error.message);
+        setIsLoading(false);
       });
     // console.log(
     //   "data ",
@@ -103,7 +108,9 @@ const Home = () => {
   };
   return (
     <div className="bg-black text-white p-3 rounded-5 shadow-lg border border-3 border-opacity-50 border-info">
-      {err ? (
+      {isLoading ? (
+        <Loader />
+      ) : err ? (
         <p>{err}</p>
       ) : (
         location && (
@@ -113,7 +120,7 @@ const Home = () => {
                 <GeoAltFill className="me-1" />
                 {location.name} - {location.country}
               </h5>
-              <div className="text-end text-warning">
+              <div className="text-end text-success fw-bold">
                 <Clock /> Local Time<p>{location.localtime}</p>
               </div>
             </div>
