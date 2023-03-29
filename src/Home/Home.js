@@ -3,7 +3,6 @@ import { contextStore } from "../Layout/Layout";
 import axios from "axios";
 import { GeoAltFill, Clock } from "react-bootstrap-icons";
 
-import "./Home.css";
 import Astronomy from "./Astronomy/Astronomy";
 import WeatherInfo from "./WeatherInfo/WeatherInfo";
 import HourlyFC from "./HourlyFC/HourlyFC";
